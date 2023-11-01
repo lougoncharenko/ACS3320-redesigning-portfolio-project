@@ -1,70 +1,252 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color:rgb(229, 234, 238)
+  margin: 0;
+  padding: 0;
+  /* background-color: #dee3e7a5; */
+  background-color: #dee3e7ba;
 }
 
+/*  Header */
 header section {
-    display: flex;
-    align-items: center;
-    justify-content:space-between
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #banner > * {
-    padding: 20px;
-    font-size: 1em;
-    font-weight: bold;
+  padding: 20px;
+  font-size: 3.5vw;
+  font-weight: bold;
+  color: black !important;
 }
 
 nav {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 nav li {
-    list-style: none;
-    padding-right: 10px;
-    color: black;
-  
-    
-} 
+  list-style: none;
+  padding-right: 15px;
+  color: black;
+}
 
-nav li a:link{
-    color: black;
-    text-decoration: none;
+nav li a:visited {
+  color: black;
+}
+
+nav li a:hover {
+  color: rgb(160, 9, 9);
+  font-size: 3.2vw;
+}
+
+nav li a:link {
+  text-decoration: none;
 }
 
 nav li:last-child {
-    padding-right: 0px;
+  padding-right: 0px;
+}
+
+/* Main section */
+
+#introduction-section {
+  margin-top: 10rem;
+  margin-left: 5rem;
+  width: 60vw;
+}
+
+.typed-out {
+  color: grey;
+  overflow: hidden;
+  /* border-right: .15em solid grey; */
+  white-space: nowrap;
+  font-size: 1.6rem;
+  width: 0;
+  animation: typing 20s forwards;
+}
+
+#introduction-section p {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  justify-items: center;
+}
+
+/* Technical-skills-section */
+.technical-skills-section {
+  margin: 30px;
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  background-color: #eff0f1ef;
+}
+
+.columns li {
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.skill-photo {
+  background-image: url("https://physicsgurukul.files.wordpress.com/2019/02/character-1.gif");
+  border-radius: 15px;
+  width: 60vw;
+  height: 400px;
+  grid-area: photo;
+}
+
+/* Project Section */
+#project-section {
+  margin-top: 10rem;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "project1 project2"
+    "project3 project4";
+}
+
+#project-header {
+  margin-left: 3rem;
+  grid-area: header;
+}
+
+#project1 {
+  grid-area: project1;
+}
+
+#project2 {
+  grid-area: project2;
+}
+
+#project3 {
+  grid-area: project3;
+}
+
+#project4 {
+  grid-area: project4;
+}
+
+figcaption {
+  text-align: center;
+}
+
+/* Contact Wrapper */
+.contact-wrapper {
+  margin: 10rem 3rem 0rem 3rem;
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 150px;
+  margin-top: 20px;
+  margin-right: 40px;
+}
+
+input[type="submit"] {
+  padding: 16px 32px;
+  width: 100px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.contact-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+/* Animations */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Media Queries */
+
+/* Desktops && large screens */
+@media screen and (min-width: 1025px) {
+  /* body {
+    background-color: yellow;
+  } */
+  #banner > * {
+    font-size: 3vw;
+  }
+}
+
+/* Small Screens && Laptops */
+@media screen and (max-width: 1024px) {
+  .technical-skills-section {
+    flex-direction: column;
   }
 
-  li:hover {
-color:aqua
+  .column-wrapper {
+    display: flex;
   }
 
+  .columns {
+    padding: 15px;
+  }
+}
+
+/* Ipads && Tablets */
+@media screen and (max-width: 768px) {
+  /* body {
+    background-color: red;
+  } */
 
   #introduction-section {
-    margin-top: 10rem;
-    margin-left: 5rem;
-    width: 60vw
+    margin: 10rem 3rem 10rem 3rem !important;
+    width: auto;
   }
 
   .typed-out {
-    color: grey;
-    overflow: hidden;
-    /* border-right: .15em solid grey; */
-    white-space: nowrap;
-    font-size: 1.6rem;
-    width: 0;
-    animation: typing 20s forwards;
+    font-size: 1.7rem;
   }
 
-
-  #introduction-section p {
-    font-size: 1.6rem;
-    line-height: 2.5rem;
+  .technical-skills-section {
+    flex-direction: column;
   }
 
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  .column-wrapper {
+    display: flex;
   }
+
+  .columns {
+    padding: 15px;
+  }
+
+  .skill-photo {
+    width: 80vw;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+  }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 480px) {
+  /* body {
+    background-color: blue;
+  } */
+}
